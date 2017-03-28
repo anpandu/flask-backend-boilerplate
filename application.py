@@ -2,11 +2,13 @@ import os
 import time
 
 from flask import Flask, jsonify, render_template, request, redirect, url_for, jsonify
+from flask_cors import CORS
 
 from config import Config
 from modules.handlers.hello_handler import HelloHandler
 
 app = Flask(__name__)
+CORS(app)
 app.config.update(DEBUG=False)
 
 @app.route("/")
