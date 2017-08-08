@@ -13,7 +13,7 @@ app.config.update(DEBUG=False)
 
 @app.route("/")
 def hello():
-  return HelloHandler.hello()
+  return HelloHandler.hello(endpoint="/")
 
 def main(environ=None, start_response=None):
   if __name__ == '__main__':
