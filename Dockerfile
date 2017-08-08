@@ -1,12 +1,14 @@
 FROM python:2.7
+WORKDIR /home/app/
 
 RUN apt-get -y update
 RUN apt-get -y install python-dev build-essential
 RUN apt-get -y install python-pip
 RUN pip install --upgrade pip
 
-COPY . /home/app/
-RUN pip install -r /home/app/requirements.txt
+ADD . .
+RUN pip install -r ./requirements.txt
 
+ENV PORT 5001
 EXPOSE 5001
-CMD cd /home/app/ && python application.py
+CMD gunicorn -c gunicorn.py application:main

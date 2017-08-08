@@ -15,5 +15,11 @@ app.config.update(DEBUG=False)
 def hello():
   return HelloHandler.hello()
 
-if __name__ == "__main__":
-  app.run(host='0.0.0.0', port=Config.PORT)
+def main(environ=None, start_response=None):
+  if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=Config.PORT, debug=False)
+  else:
+    return app(environ, start_response)
+
+if __name__ == '__main__':
+  main()
