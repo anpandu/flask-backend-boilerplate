@@ -3,7 +3,7 @@ click==6.7
 enum-compat==0.0.2
 enum34==1.1.6
 eventlet==0.20.1
-Flask==0.12
+Flask==1.0
 Flask-Cors==3.0.2
 greenlet==0.4.12
 gunicorn==19.6.0
