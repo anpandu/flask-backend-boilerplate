@@ -6,14 +6,14 @@ from modules.handlers.error_handler import handle_error
 
 LOGGER = get_logger()
 
-class HelloHandler (object):
 
-  @staticmethod
-  def hello (endpoint):
-    try:
-      message = {'text':'hello'}
-      LOGGER.info('hello hit')
-      res_json = json.dumps(message)
-      return res_json
-    except Exception as exception:
-      return handle_error(endpoint=endpoint, e=exception)
+class HelloHandler(object):
+    @staticmethod
+    def hello(endpoint):
+        try:
+            message = {"text": "hello"}
+            LOGGER.info("hello hit")
+            res_json = json.dumps(message)
+            return res_json
+        except Exception as exception:
+            return handle_error(endpoint=endpoint, e=exception)

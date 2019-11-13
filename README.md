@@ -13,7 +13,7 @@ pip install -r requirements.txt
 ## Run
 
 ```sh
-python application.py
+python3.6 application.py
 ```
 
 ## Run using docker

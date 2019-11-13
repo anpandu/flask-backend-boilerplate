@@ -1,5 +1,5 @@
 start:
-		sh -c "python application.py"
+		sh -c "python3.6 application.py"
 test:
 		sh -c "TESTING=True nose2 -v"
 build:
