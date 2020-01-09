@@ -1,4 +1,5 @@
 import json
+from flask import request
 
 
 def read_json(path):
@@ -23,3 +24,14 @@ def flatten(arr):
 
 def uniq(arr):
     return list(set(arr))
+
+
+def get_req_metadata():
+    return {
+        "url": request.url,
+        "url_root": request.url_root,
+        "path": request.path,
+        "headers": dict(request.headers),
+        "params": request.args,
+        "visitor_ip": request.remote_addr,
+    }

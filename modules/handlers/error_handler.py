@@ -11,7 +11,7 @@ LOGGER = get_logger()
 def handle_error(endpoint, e, status_code=500, tb=traceback):
     err_msg = {
         "message": str(e),
-        'path': request.path,
+        "path": request.path,
         "trace": re.sub("\s+", " ", tb.format_exc()) if tb is not None else None,
     }
     LOGGER.error(json.dumps(err_msg))

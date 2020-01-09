@@ -24,8 +24,8 @@ def get_syslog_handler():
     logger_port = Config.LOGGER_PORT
     if not logger_port:
         logging.basicConfig(
-            format='[%(levelname)s][%(asctime)s][%(process)d] %(message)s',
-            datefmt='%Y-%m-%d %H:%M:%S'
+            format="[%(levelname)s][%(asctime)s][%(process)d] %(message)s",
+            datefmt="%Y-%m-%d %H:%M:%S",
         )
         return None
     syslog = SysLogHandler(address=(logger_host, int(logger_port)))
